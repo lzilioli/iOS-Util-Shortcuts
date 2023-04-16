@@ -1,1 +1,89 @@
-{"WFWorkflowMinimumClientVersionString":"900","WFWorkflowMinimumClientVersion":900,"WFWorkflowIcon":{"WFWorkflowIconStartColor":-2873601,"WFWorkflowIconGlyphNumber":59772},"WFWorkflowClientVersion":"1417.1","WFWorkflowOutputContentItemClasses":[],"WFWorkflowHasOutputFallback":false,"WFWorkflowActions":[{"WFWorkflowActionIdentifier":"com.apple.shortcuts.OpenNavigationDestinationAction","WFWorkflowActionParameters":{"target":{"title":{"key":"All Shortcuts"},"identifier":"allshortcuts"},"AppIntentDescriptor":{"TeamIdentifier":"0000000000","BundleIdentifier":"com.apple.shortcuts","Name":"Shortcuts","AppIntentIdentifier":"OpenNavigationDestinationAction"}}},{"WFWorkflowActionIdentifier":"is.workflow.actions.ask","WFWorkflowActionParameters":{"UUID":"24CE04C4-8E0E-49C9-856A-01628A4151FC","WFAllowsMultilineText":false,"WFAskActionPrompt":"Search what?"}},{"WFWorkflowActionIdentifier":"com.apple.shortcuts.SearchShortcutsAction","WFWorkflowActionParameters":{"searchPhrase":{"Value":{"string":"￼","attachmentsByRange":{"{0, 1}":{"OutputUUID":"24CE04C4-8E0E-49C9-856A-01628A4151FC","Type":"ActionOutput","OutputName":"Provided Input"}}},"WFSerializationType":"WFTextTokenString"},"AppIntentDescriptor":{"TeamIdentifier":"0000000000","BundleIdentifier":"com.apple.shortcuts","Name":"Shortcuts","AppIntentIdentifier":"SearchShortcutsAction"}}}],"WFWorkflowInputContentItemClasses":["WFAppContentItem","WFAppStoreAppContentItem","WFArticleContentItem","WFContactContentItem","WFDateContentItem","WFEmailAddressContentItem","WFFolderContentItem","WFGenericFileContentItem","WFImageContentItem","WFiTunesProductContentItem","WFLocationContentItem","WFDCMapsLinkContentItem","WFAVAssetContentItem","WFPDFContentItem","WFPhoneNumberContentItem","WFRichTextContentItem","WFSafariWebPageContentItem","WFStringContentItem","WFURLContentItem"],"WFWorkflowImportQuestions":[],"WFWorkflowTypes":["Watch"],"WFQuickActionSurfaces":[],"WFWorkflowHasShortcutInputVariables":false}
+{
+  "WFWorkflowMinimumClientVersionString": "900",
+  "WFWorkflowMinimumClientVersion": 900,
+  "WFWorkflowIcon": {
+    "WFWorkflowIconStartColor": -2873601,
+    "WFWorkflowIconGlyphNumber": 59772
+  },
+  "WFWorkflowClientVersion": "1417.1",
+  "WFWorkflowOutputContentItemClasses": [],
+  "WFWorkflowHasOutputFallback": false,
+  "WFWorkflowActions": [
+    {
+      "WFWorkflowActionIdentifier": "com.apple.shortcuts.OpenNavigationDestinationAction",
+      "WFWorkflowActionParameters": {
+        "target": {
+          "title": {
+            "key": "All Shortcuts"
+          },
+          "identifier": "allshortcuts"
+        },
+        "AppIntentDescriptor": {
+          "TeamIdentifier": "0000000000",
+          "BundleIdentifier": "com.apple.shortcuts",
+          "Name": "Shortcuts",
+          "AppIntentIdentifier": "OpenNavigationDestinationAction"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.ask",
+      "WFWorkflowActionParameters": {
+        "WFAllowsMultilineText": false,
+        "WFAskActionPrompt": "Search what?",
+        "UUID": "24CE04C4-8E0E-49C9-856A-01628A4151FC"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "com.apple.shortcuts.SearchShortcutsAction",
+      "WFWorkflowActionParameters": {
+        "searchPhrase": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "OutputUUID": "24CE04C4-8E0E-49C9-856A-01628A4151FC",
+                "Type": "ActionOutput",
+                "OutputName": "Provided Input"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "AppIntentDescriptor": {
+          "TeamIdentifier": "0000000000",
+          "BundleIdentifier": "com.apple.shortcuts",
+          "Name": "Shortcuts",
+          "AppIntentIdentifier": "SearchShortcutsAction"
+        }
+      }
+    }
+  ],
+  "WFWorkflowInputContentItemClasses": [
+    "WFAppContentItem",
+    "WFAppStoreAppContentItem",
+    "WFArticleContentItem",
+    "WFContactContentItem",
+    "WFDateContentItem",
+    "WFEmailAddressContentItem",
+    "WFFolderContentItem",
+    "WFGenericFileContentItem",
+    "WFImageContentItem",
+    "WFiTunesProductContentItem",
+    "WFLocationContentItem",
+    "WFDCMapsLinkContentItem",
+    "WFAVAssetContentItem",
+    "WFPDFContentItem",
+    "WFPhoneNumberContentItem",
+    "WFRichTextContentItem",
+    "WFSafariWebPageContentItem",
+    "WFStringContentItem",
+    "WFURLContentItem"
+  ],
+  "WFWorkflowImportQuestions": [],
+  "WFWorkflowTypes": [
+    "Watch"
+  ],
+  "WFQuickActionSurfaces": [],
+  "WFWorkflowHasShortcutInputVariables": false
+}
