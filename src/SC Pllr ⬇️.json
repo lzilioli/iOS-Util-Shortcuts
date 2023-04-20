@@ -1230,22 +1230,11 @@
       }
     },
     {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.runworkflow",
+      "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
       "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Value": {
-            "VariableName": "REPO CLONE URL",
-            "Type": "Variable"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "WFWorkflow": {
-          "workflowIdentifier": "38F2F4D1-564F-4916-BE8B-61C536173C34",
-          "workflowName": "SC Pllr ⬇️ 2",
-          "isSelf": true
-        },
-        "UUID": "E53F2909-BB8D-49AA-B225-CAB248C1D363",
-        "WFWorkflowName": "SC Pllr ⬇️ 2"
+        "WFAlertActionCancelButtonShown": false,
+        "WFAlertActionMessage": "Please review and install the opened shortcut, and then run SC Pllr ⬇️ again.\n\nThis is a limitation of the shortcuts app. We can not install multiple shortcuts on a single run.",
+        "WFAlertActionTitle": "Almost Done!"
       }
     },
     {
@@ -1259,7 +1248,7 @@
       "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
       "WFWorkflowActionParameters": {
         "WFAlertActionCancelButtonShown": false,
-        "WFAlertActionMessage": "Please review and install the opened shortcuts",
+        "WFAlertActionMessage": "Please review and install the opened shortcut",
         "WFAlertActionTitle": "Almost Done!"
       }
     },

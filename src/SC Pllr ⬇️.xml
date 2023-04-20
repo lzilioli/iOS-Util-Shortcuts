@@ -1995,34 +1995,17 @@
 		</dict>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
-			<string>is.workflow.actions.runworkflow</string>
+			<string>is.workflow.actions.alert</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict>
-				<key>UUID</key>
-				<string>E53F2909-BB8D-49AA-B225-CAB248C1D363</string>
-				<key>WFInput</key>
-				<dict>
-					<key>Value</key>
-					<dict>
-						<key>Type</key>
-						<string>Variable</string>
-						<key>VariableName</key>
-						<string>REPO CLONE URL</string>
-					</dict>
-					<key>WFSerializationType</key>
-					<string>WFTextTokenAttachment</string>
-				</dict>
-				<key>WFWorkflow</key>
-				<dict>
-					<key>isSelf</key>
-					<true/>
-					<key>workflowIdentifier</key>
-					<string>38F2F4D1-564F-4916-BE8B-61C536173C34</string>
-					<key>workflowName</key>
-					<string>SC Pllr ⬇️ 2</string>
-				</dict>
-				<key>WFWorkflowName</key>
-				<string>SC Pllr ⬇️ 2</string>
+				<key>WFAlertActionCancelButtonShown</key>
+				<false/>
+				<key>WFAlertActionMessage</key>
+				<string>Please review and install the opened shortcut, and then run SC Pllr ⬇️ again.
+
+This is a limitation of the shortcuts app. We can not install multiple shortcuts on a single run.</string>
+				<key>WFAlertActionTitle</key>
+				<string>Almost Done!</string>
 			</dict>
 		</dict>
 		<dict>
@@ -2044,7 +2027,7 @@
 				<key>WFAlertActionCancelButtonShown</key>
 				<false/>
 				<key>WFAlertActionMessage</key>
-				<string>Please review and install the opened shortcuts</string>
+				<string>Please review and install the opened shortcut</string>
 				<key>WFAlertActionTitle</key>
 				<string>Almost Done!</string>
 			</dict>
