@@ -96,20 +96,6 @@
       }
     },
     {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.setclipboard",
-      "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Value": {
-            "OutputUUID": "20AB0015-B400-4A8B-B1A3-90FC8F59DD2F",
-            "Type": "ActionOutput",
-            "OutputName": "Combined Text"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "3DC7D8B7-51BF-4FBF-920A-CF61C6581CB4"
-      }
-    },
-    {
       "WFWorkflowActionIdentifier": "is.workflow.actions.dictionary",
       "WFWorkflowActionParameters": {
         "WFItems": {
