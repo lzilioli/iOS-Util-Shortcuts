@@ -563,6 +563,92 @@ Ok to proceed.</string>
 		</dict>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.detect.images</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>228A6462-5D60-4296-ABF6-3C2DF2B47959</string>
+				<key>WFInput</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>OutputName</key>
+						<string>Target shortcut</string>
+						<key>OutputUUID</key>
+						<string>5835859F-7BB7-41C1-B773-59565F275D2F</string>
+						<key>Type</key>
+						<string>ActionOutput</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>com.appliedphasor.working-copy.WriteFileIntent</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>66613310-5FB2-4BB7-BE98-6E0EEBC72766</string>
+				<key>content</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>OutputName</key>
+						<string>Images</string>
+						<key>OutputUUID</key>
+						<string>228A6462-5D60-4296-ABF6-3C2DF2B47959</string>
+						<key>Type</key>
+						<string>ActionOutput</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+				<key>createMissing</key>
+				<true/>
+				<key>mode</key>
+				<string>overwrite</string>
+				<key>path</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>attachmentsByRange</key>
+						<dict>
+							<key>{4, 1}</key>
+							<dict>
+								<key>Type</key>
+								<string>Variable</string>
+								<key>VariableName</key>
+								<string>Repeat Item</string>
+							</dict>
+						</dict>
+						<key>string</key>
+						<string>src/￼.png</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenString</string>
+				</dict>
+				<key>repo</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>OutputName</key>
+						<string>Target repo</string>
+						<key>OutputUUID</key>
+						<string>F10DA6A8-2FC3-4053-9CDB-F3239AFBB632</string>
+						<key>Type</key>
+						<string>ActionOutput</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+				<key>stage</key>
+				<true/>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
 			<string>com.appliedphasor.working-copy.WriteFileIntent</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict>
@@ -620,6 +706,8 @@ Ok to proceed.</string>
 					<key>WFSerializationType</key>
 					<string>WFTextTokenAttachment</string>
 				</dict>
+				<key>stage</key>
+				<true/>
 			</dict>
 		</dict>
 		<dict>

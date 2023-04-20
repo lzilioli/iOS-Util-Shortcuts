@@ -16,7 +16,7 @@ Please note that SC Psher ⬆ is only required if you are a Shortcut developer l
 ## Apple Shortcuts in this Repository
 
 1. **SC Pllr ⬇️**: This shortcut prompts for a Git repository URL, and installs all of the shortcuts. When run with a URL you’ve already cloned, it will install the latest version of all shortcuts if necessary.
-2. **SC Pshr ⬆️**: Accepts a dictionary as an input, requiring two keys: “shortcuts” (a list of shortcuts to be published) and “repo” (a URL for the repository being published). This shortcut saves the latest version of the shortcuts to the repository and includes a “src” folder containing the shortcut in XML and JSON representation for easier PR review. if you publish a repository with this shortcut, please include "sc-pullr-last-version.txt" in a .gitignore file
+2. **SC Pshr ⬆️**: Accepts a dictionary as an input, requiring two keys: “shortcuts” (a list of shortcuts to be published) and “repo” (a URL for the repository being published). This shortcut saves the latest version of the shortcuts to the repository and includes a “src” folder containing the shortcut in XML and JSON representation for easier PR review. if you publish a repository with this shortcut, please include "sc-pllr-info.json" in a .gitignore file
 3. **Call SC Pshr**: Illustrates how to use the SC Pshr ⬆️ shortcut. In fact, it demonstrates how to use it for the iOS Util Shortcuts repo itself. If you are a shortcut developer and you wish to publish your own shortcut repository, you can duplicate this shortcut and adapt the “Filter Shortcuts” action to find the shortcuts you wish to publish.
 4. **Find Shortcut**: A small utility that looks for a shortcut and searches for it in the Shortcuts app.
 

@@ -345,9 +345,77 @@
       }
     },
     {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.detect.images",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "5835859F-7BB7-41C1-B773-59565F275D2F",
+            "Type": "ActionOutput",
+            "OutputName": "Target shortcut"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "228A6462-5D60-4296-ABF6-3C2DF2B47959"
+      }
+    },
+    {
       "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.WriteFileIntent",
       "WFWorkflowActionParameters": {
+        "repo": {
+          "Value": {
+            "OutputUUID": "F10DA6A8-2FC3-4053-9CDB-F3239AFBB632",
+            "Type": "ActionOutput",
+            "OutputName": "Target repo"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "content": {
+          "Value": {
+            "OutputUUID": "228A6462-5D60-4296-ABF6-3C2DF2B47959",
+            "Type": "ActionOutput",
+            "OutputName": "Images"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "mode": "overwrite",
+        "UUID": "66613310-5FB2-4BB7-BE98-6E0EEBC72766",
+        "path": {
+          "Value": {
+            "string": "src/￼.png",
+            "attachmentsByRange": {
+              "{4, 1}": {
+                "VariableName": "Repeat Item",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
         "createMissing": true,
+        "stage": true
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.WriteFileIntent",
+      "WFWorkflowActionParameters": {
+        "repo": {
+          "Value": {
+            "OutputUUID": "F10DA6A8-2FC3-4053-9CDB-F3239AFBB632",
+            "Type": "ActionOutput",
+            "OutputName": "Target repo"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "content": {
+          "Value": {
+            "OutputUUID": "5835859F-7BB7-41C1-B773-59565F275D2F",
+            "Type": "ActionOutput",
+            "OutputName": "Target shortcut"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "mode": "overwrite",
+        "UUID": "9F311147-ABAC-4B4F-9B44-FC0AC3F6041B",
         "path": {
           "Value": {
             "string": "/￼.shortcut",
@@ -360,24 +428,8 @@
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "content": {
-          "Value": {
-            "OutputUUID": "5835859F-7BB7-41C1-B773-59565F275D2F",
-            "Type": "ActionOutput",
-            "OutputName": "Target shortcut"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "9F311147-ABAC-4B4F-9B44-FC0AC3F6041B",
-        "repo": {
-          "Value": {
-            "OutputUUID": "F10DA6A8-2FC3-4053-9CDB-F3239AFBB632",
-            "Type": "ActionOutput",
-            "OutputName": "Target repo"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "mode": "overwrite"
+        "createMissing": true,
+        "stage": true
       }
     },
     {

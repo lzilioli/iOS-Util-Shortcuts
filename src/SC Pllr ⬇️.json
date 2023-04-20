@@ -10,14 +10,6 @@
   "WFWorkflowHasOutputFallback": false,
   "WFWorkflowActions": [
     {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
-      "WFWorkflowActionParameters": {
-        "WFAlertActionCancelButtonShown": false,
-        "WFAlertActionMessage": "Need to store latest SHA per file, and update when changed",
-        "WFAlertActionTitle": "TODO"
-      }
-    },
-    {
       "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
       "WFWorkflowActionParameters": {
         "WFCommentActionText": "Future enhancement: accept dictionary containing Shortcuts and repo URL, that specifies which shortcuts to install from the repo"
@@ -26,7 +18,47 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.getmyworkflows",
       "WFWorkflowActionParameters": {
-        "UUID": "0BA32614-CEE8-47C9-B48D-3FB0C7F394DD"
+        "UUID": "87984878-3BD0-4013-B0E2-75E269EE8CAC"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "Type": "ExtensionInput"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "GroupingIdentifier": "08EE4B0D-688A-4275-86C5-DEB16CCCF222",
+        "WFCondition": 100
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+      "WFWorkflowActionParameters": {
+        "WFTextActionText": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "Type": "ExtensionInput"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "08EE4B0D-688A-4275-86C5-DEB16CCCF222",
+        "WFControlFlowMode": 1
       }
     },
     {
@@ -43,7 +75,7 @@
         },
         "WFControlFlowMode": 0,
         "WFConditionalActionString": ".git",
-        "GroupingIdentifier": "B3BA33E8-43ED-40D1-86EA-B5EDE87AC626",
+        "GroupingIdentifier": "C23D00DA-5445-44CD-8499-5CA7F59F7BB0",
         "WFCondition": 99
       }
     },
@@ -61,13 +93,13 @@
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "UUID": "C5514227-EBB8-40A2-BF00-38102D5FCBC3"
+        "UUID": "7808795C-1166-4F06-9D2A-628C4944EE3F"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
       "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "B3BA33E8-43ED-40D1-86EA-B5EDE87AC626",
+        "GroupingIdentifier": "C23D00DA-5445-44CD-8499-5CA7F59F7BB0",
         "WFControlFlowMode": 1
       }
     },
@@ -75,15 +107,15 @@
       "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
       "WFWorkflowActionParameters": {
         "WFTextActionText": "git@github.com:lzilioli/iOS-Util-Shortcuts.git",
-        "UUID": "3168772A-BC2E-485B-B791-5FCD6E9BF951"
+        "UUID": "D0EEAF21-0351-4B67-82C5-6CA935AAACA2"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
       "WFWorkflowActionParameters": {
         "WFControlFlowMode": 2,
-        "GroupingIdentifier": "B3BA33E8-43ED-40D1-86EA-B5EDE87AC626",
-        "UUID": "063B6902-D38B-4260-991F-B61F42B13BE6"
+        "GroupingIdentifier": "C23D00DA-5445-44CD-8499-5CA7F59F7BB0",
+        "UUID": "2F7EB44D-F2E2-4803-A0FF-FA2D8A57C6BD"
       }
     },
     {
@@ -95,7 +127,7 @@
             "string": "￼",
             "attachmentsByRange": {
               "{0, 1}": {
-                "OutputUUID": "063B6902-D38B-4260-991F-B61F42B13BE6",
+                "OutputUUID": "2F7EB44D-F2E2-4803-A0FF-FA2D8A57C6BD",
                 "Type": "ActionOutput",
                 "OutputName": "If Result"
               }
@@ -103,9 +135,30 @@
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "CustomOutputName": "Repo clone url",
-        "UUID": "0053FBD8-6786-4165-873D-5604E36A2008",
-        "WFAskActionPrompt": "Enter repository url"
+        "UUID": "C500A634-993F-48EE-BBC9-963458AF1566",
+        "WFAskActionPrompt": "Enter repository URL"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "08EE4B0D-688A-4275-86C5-DEB16CCCF222",
+        "UUID": "15640E21-F1F8-4F40-8694-C9E378767B22"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "15640E21-F1F8-4F40-8694-C9E378767B22",
+            "Type": "ActionOutput",
+            "OutputName": "If Result"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "REPO CLONE URL"
       }
     },
     {
@@ -117,31 +170,43 @@
             "string": "￼",
             "attachmentsByRange": {
               "{0, 1}": {
-                "OutputUUID": "0053FBD8-6786-4165-873D-5604E36A2008",
-                "Type": "ActionOutput",
-                "OutputName": "Repo clone url"
+                "VariableName": "REPO CLONE URL",
+                "Type": "Variable"
               }
             }
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "UUID": "7E554545-1AAC-4DBA-BDFB-E1E22DFD3729"
+        "UUID": "F4921145-0DF2-4EB3-83BD-A3EC6EE9E714"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.text.match.getgroup",
       "WFWorkflowActionParameters": {
-        "CustomOutputName": "REPO NAME",
-        "WFGroupIndex": "0",
-        "UUID": "82F6E9D7-D726-4783-9FCD-6AD76BA3BA4D",
         "matches": {
           "Value": {
-            "OutputUUID": "7E554545-1AAC-4DBA-BDFB-E1E22DFD3729",
+            "OutputUUID": "F4921145-0DF2-4EB3-83BD-A3EC6EE9E714",
             "Type": "ActionOutput",
             "OutputName": "Matches"
           },
           "WFSerializationType": "WFTextTokenAttachment"
-        }
+        },
+        "WFGroupIndex": "0",
+        "UUID": "2236A914-273B-4E32-838E-D215A0C3328C"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "2236A914-273B-4E32-838E-D215A0C3328C",
+            "Type": "ActionOutput",
+            "OutputName": "Text"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "REPO NAME"
       }
     },
     {
@@ -152,15 +217,14 @@
             "string": "￼",
             "attachmentsByRange": {
               "{0, 1}": {
-                "OutputUUID": "82F6E9D7-D726-4783-9FCD-6AD76BA3BA4D",
-                "Type": "ActionOutput",
-                "OutputName": "REPO NAME"
+                "VariableName": "REPO NAME",
+                "Type": "Variable"
               }
             }
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "UUID": "80B272B2-62EF-4269-930E-1F72BC7DE2EB"
+        "UUID": "83F8FCFF-2F07-440A-97B2-07DADF76EDAC"
       }
     },
     {
@@ -168,24 +232,24 @@
       "WFWorkflowActionParameters": {
         "Input": {
           "Value": {
-            "OutputUUID": "80B272B2-62EF-4269-930E-1F72BC7DE2EB",
+            "OutputUUID": "83F8FCFF-2F07-440A-97B2-07DADF76EDAC",
             "Type": "ActionOutput",
             "OutputName": "Repositories"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "460A609D-0409-4993-94C5-DC8CEC09471F"
+        "UUID": "A56405CA-D069-4EC0-A431-BD1DF8F0C30B"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
       "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "C7827534-0555-49AE-BB6C-70CB4F46D5E3",
+        "GroupingIdentifier": "072A288C-82AE-4D69-AC64-59894101AD7B",
         "WFInput": {
           "Type": "Variable",
           "Variable": {
             "Value": {
-              "OutputUUID": "460A609D-0409-4993-94C5-DC8CEC09471F",
+              "OutputUUID": "A56405CA-D069-4EC0-A431-BD1DF8F0C30B",
               "Type": "ActionOutput",
               "OutputName": "Count"
             },
@@ -200,33 +264,19 @@
     {
       "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.CloneRepositoryIntent",
       "WFWorkflowActionParameters": {
-        "name": {
-          "Value": {
-            "string": "￼",
-            "attachmentsByRange": {
-              "{0, 1}": {
-                "OutputUUID": "82F6E9D7-D726-4783-9FCD-6AD76BA3BA4D",
-                "Type": "ActionOutput",
-                "OutputName": "REPO NAME"
-              }
-            }
-          },
-          "WFSerializationType": "WFTextTokenString"
-        },
         "url": {
           "Value": {
             "string": "￼",
             "attachmentsByRange": {
               "{0, 1}": {
-                "OutputUUID": "0053FBD8-6786-4165-873D-5604E36A2008",
-                "Type": "ActionOutput",
-                "OutputName": "Repo clone url"
+                "VariableName": "REPO CLONE URL",
+                "Type": "Variable"
               }
             }
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "UUID": "1B85F97B-6031-4349-9B8D-9FFED417F7E4"
+        "UUID": "A74FC714-0093-41B3-91F0-38C3D60B767E"
       }
     },
     {
@@ -236,7 +286,7 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
       "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "C7827534-0555-49AE-BB6C-70CB4F46D5E3",
+        "GroupingIdentifier": "072A288C-82AE-4D69-AC64-59894101AD7B",
         "WFControlFlowMode": 1
       }
     },
@@ -245,21 +295,27 @@
       "WFWorkflowActionParameters": {
         "repo": {
           "Value": {
-            "OutputUUID": "80B272B2-62EF-4269-930E-1F72BC7DE2EB",
+            "OutputUUID": "83F8FCFF-2F07-440A-97B2-07DADF76EDAC",
             "Type": "ActionOutput",
             "OutputName": "Repositories"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "39C6568D-A3BE-446C-B396-EFD0364CEAB6"
+        "UUID": "70F5DA1A-ACEA-484D-A7A7-36771801CACD"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
       "WFWorkflowActionParameters": {
         "WFControlFlowMode": 2,
-        "GroupingIdentifier": "C7827534-0555-49AE-BB6C-70CB4F46D5E3",
-        "UUID": "4584396F-1612-4E81-BA7B-DF1FFA2ED3AF"
+        "GroupingIdentifier": "072A288C-82AE-4D69-AC64-59894101AD7B",
+        "UUID": "088EB7E1-BFC9-44CC-9113-82F355129911"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "Now that we have cloned or updated the repository, get an updated reference to it"
       }
     },
     {
@@ -270,201 +326,34 @@
             "string": "￼",
             "attachmentsByRange": {
               "{0, 1}": {
-                "OutputUUID": "82F6E9D7-D726-4783-9FCD-6AD76BA3BA4D",
-                "Type": "ActionOutput",
-                "OutputName": "REPO NAME"
+                "VariableName": "REPO NAME",
+                "Type": "Variable"
               }
             }
           },
           "WFSerializationType": "WFTextTokenString"
         },
-        "UUID": "6F8244F8-0436-40FC-9449-B94575A7170D"
+        "UUID": "0A0C1E57-CA4C-4493-A3AE-D4CB2FF94137"
       }
     },
     {
-      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.PullRepositoryIntent",
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
       "WFWorkflowActionParameters": {
-        "remote": " Default ",
-        "repo": {
+        "WFInput": {
           "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
+            "OutputUUID": "0A0C1E57-CA4C-4493-A3AE-D4CB2FF94137",
             "Type": "ActionOutput",
             "OutputName": "Repositories"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "E771C416-C527-4CA2-91B8-190C3E3E0069"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.GetFilesIntent",
-      "WFWorkflowActionParameters": {
-        "path": "/sc-pullr-last-version.txt",
-        "repo": {
-          "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
-            "Type": "ActionOutput",
-            "OutputName": "Repositories"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "CEB96CB1-6990-4C0D-AD85-8F38657D822F"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.detect.text",
-      "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Value": {
-            "OutputUUID": "CEB96CB1-6990-4C0D-AD85-8F38657D822F",
-            "Type": "ActionOutput",
-            "OutputName": "Files"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "CustomOutputName": "Last SHA",
-        "UUID": "611EC610-0EEF-4184-9134-3ACF39E00335"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.CommitLogIntent",
-      "WFWorkflowActionParameters": {
-        "limit": "10",
-        "repo": {
-          "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
-            "Type": "ActionOutput",
-            "OutputName": "Repositories"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "2AD312AA-B348-4D91-95BC-F716EEE1060F"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
-      "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Value": {
-            "OutputUUID": "2AD312AA-B348-4D91-95BC-F716EEE1060F",
-            "Type": "ActionOutput",
-            "OutputName": "History"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "WFItemSpecifier": "First Item",
-        "UUID": "E06A99AA-820F-44DD-8674-9500AFC257E2"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
-      "WFWorkflowActionParameters": {
-        "WFTextActionText": {
-          "Value": {
-            "string": "￼",
-            "attachmentsByRange": {
-              "{0, 1}": {
-                "Type": "ActionOutput",
-                "OutputName": "Item from List",
-                "OutputUUID": "E06A99AA-820F-44DD-8674-9500AFC257E2",
-                "Aggrandizements": [
-                  {
-                    "Type": "WFPropertyVariableAggrandizement",
-                    "PropertyName": "shortCommitIdentifier"
-                  }
-                ]
-              }
-            }
-          },
-          "WFSerializationType": "WFTextTokenString"
-        },
-        "CustomOutputName": "Latest SHA",
-        "UUID": "86C8F681-C590-438A-AE2F-E784697CDC09"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Type": "Variable",
-          "Variable": {
-            "Value": {
-              "OutputUUID": "611EC610-0EEF-4184-9134-3ACF39E00335",
-              "Type": "ActionOutput",
-              "OutputName": "Last SHA"
-            },
-            "WFSerializationType": "WFTextTokenAttachment"
-          }
-        },
-        "WFControlFlowMode": 0,
-        "WFConditionalActionString": {
-          "Value": {
-            "string": "￼",
-            "attachmentsByRange": {
-              "{0, 1}": {
-                "OutputUUID": "86C8F681-C590-438A-AE2F-E784697CDC09",
-                "Type": "ActionOutput",
-                "OutputName": "Latest SHA"
-              }
-            }
-          },
-          "WFSerializationType": "WFTextTokenString"
-        },
-        "GroupingIdentifier": "13808B62-FE2A-4EA7-A3A7-D4E998AAD6B2",
-        "WFCondition": 8
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
-      "WFWorkflowActionParameters": {
-        "WFMenuPrompt": "Everything up to date!",
-        "WFControlFlowMode": 0,
-        "WFMenuItems": [
-          "Update Anyway",
-          "Ok"
-        ],
-        "GroupingIdentifier": "1E912308-D702-4807-9786-19F3796EDE72"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
-      "WFWorkflowActionParameters": {
-        "WFMenuItemTitle": "Update Anyway",
-        "GroupingIdentifier": "1E912308-D702-4807-9786-19F3796EDE72",
-        "WFControlFlowMode": 1
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
-      "WFWorkflowActionParameters": {
-        "WFMenuItemTitle": "Ok",
-        "GroupingIdentifier": "1E912308-D702-4807-9786-19F3796EDE72",
-        "WFControlFlowMode": 1
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.exit",
-      "WFWorkflowActionParameters": {}
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
-      "WFWorkflowActionParameters": {
-        "WFControlFlowMode": 2,
-        "GroupingIdentifier": "1E912308-D702-4807-9786-19F3796EDE72",
-        "UUID": "4B4F4F79-40F5-433F-BDE1-5A6966DE2D0A"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "13808B62-FE2A-4EA7-A3A7-D4E998AAD6B2",
-        "WFControlFlowMode": 2
+        "WFVariableName": "THE REPO"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
       "WFWorkflowActionParameters": {
-        "WFCommentActionText": "Collect a list of missing shortcuts that need to be installed"
+        "WFCommentActionText": "Get a list of all the shortcuts in the repository"
       }
     },
     {
@@ -473,18 +362,28 @@
         "path": "/",
         "repo": {
           "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
-            "Type": "ActionOutput",
-            "OutputName": "Repositories"
+            "VariableName": "THE REPO",
+            "Type": "Variable"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "D94D99C9-39D6-48C4-8270-117E17B37E3F"
+        "UUID": "D01DEAED-C92A-4821-9A11-0B8E239F1EA9"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.filter.files",
       "WFWorkflowActionParameters": {
+        "WFContentItemInputParameter": {
+          "Value": {
+            "OutputUUID": "D01DEAED-C92A-4821-9A11-0B8E239F1EA9",
+            "Type": "ActionOutput",
+            "OutputName": "Files"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFContentItemSortProperty": "Name",
+        "UUID": "8505B03A-3DC4-4985-B1B3-AF62DB0B2395",
+        "WFContentItemSortOrder": "A to Z",
         "WFContentItemFilter": {
           "Value": {
             "WFActionParameterFilterPrefix": 1,
@@ -502,47 +401,724 @@
             ]
           },
           "WFSerializationType": "WFContentPredicateTableTemplate"
-        },
-        "WFContentItemInputParameter": {
-          "Value": {
-            "OutputUUID": "D94D99C9-39D6-48C4-8270-117E17B37E3F",
-            "Type": "ActionOutput",
-            "OutputName": "Files"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "FA40E391-030A-438C-91C2-73DD20D47CEE"
+        }
       }
     },
     {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
       "WFWorkflowActionParameters": {
         "WFInput": {
           "Value": {
-            "OutputUUID": "FA40E391-030A-438C-91C2-73DD20D47CEE",
+            "OutputUUID": "8505B03A-3DC4-4985-B1B3-AF62DB0B2395",
             "Type": "ActionOutput",
             "OutputName": "Files"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
-        "GroupingIdentifier": "3568E92B-65CC-4F0C-BB6B-5E940822D050",
-        "WFControlFlowMode": 0
+        "WFVariableName": "REPO SHORTCUTS"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "Fetch the latest commit hash for the repository"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.CommitLogIntent",
+      "WFWorkflowActionParameters": {
+        "repo": {
+          "Value": {
+            "VariableName": "THE REPO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "890565F9-0702-4D60-8C90-5D4F3E73565B"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "890565F9-0702-4D60-8C90-5D4F3E73565B",
+            "Type": "ActionOutput",
+            "OutputName": "History"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "41110BBE-3555-4A45-8103-D932D1433078"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+      "WFWorkflowActionParameters": {
+        "WFTextActionText": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "Type": "ActionOutput",
+                "OutputName": "Item from List",
+                "OutputUUID": "41110BBE-3555-4A45-8103-D932D1433078",
+                "Aggrandizements": [
+                  {
+                    "Type": "WFPropertyVariableAggrandizement",
+                    "PropertyName": "commitIdentifier"
+                  }
+                ]
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "A869C4CC-CD30-4C4E-AF83-C19B689E31D1"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "A869C4CC-CD30-4C4E-AF83-C19B689E31D1",
+            "Type": "ActionOutput",
+            "OutputName": "Text"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "LATEST COMMIT"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.GetFilesIntent",
+      "WFWorkflowActionParameters": {
+        "path": "/sc-pllr-info.json",
+        "repo": {
+          "Value": {
+            "VariableName": "THE REPO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "38408986-3ECE-461B-BE9D-F54A82BD84EC"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.detect.dictionary",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "38408986-3ECE-461B-BE9D-F54A82BD84EC",
+            "Type": "ActionOutput",
+            "OutputName": "Files"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "340781D5-53E3-415F-BD0B-235F69DE5AF6"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "340781D5-53E3-415F-BD0B-235F69DE5AF6",
+            "Type": "ActionOutput",
+            "OutputName": "Dictionary"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "SC PLLR INFO"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+      "WFWorkflowActionParameters": {
+        "WFTextActionText": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "SC PLLR INFO",
+                "Type": "Variable",
+                "Aggrandizements": [
+                  {
+                    "Type": "WFDictionaryValueVariableAggrandizement",
+                    "DictionaryKey": "lastCommit"
+                  }
+                ]
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "15B00EDB-E0A7-4C52-9421-1F063A0DF88A"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "OutputUUID": "15B00EDB-E0A7-4C52-9421-1F063A0DF88A",
+              "Type": "ActionOutput",
+              "OutputName": "Text"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "WFConditionalActionString": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "LATEST COMMIT",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "GroupingIdentifier": "83827962-82D7-46BF-BB04-EAA3569EB46B",
+        "WFCondition": 4
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable",
+            "Aggrandizements": [
+              {
+                "Type": "WFDictionaryValueVariableAggrandizement",
+                "DictionaryKey": "shortcutsToUpdate"
+              }
+            ]
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "83827962-82D7-46BF-BB04-EAA3569EB46B",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefromlist",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "REPO SHORTCUTS",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFChooseFromListActionPrompt": "Select shortcuts to install",
+        "WFChooseFromListActionSelectMultiple": true,
+        "WFChooseFromListActionSelectAll": true
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "83827962-82D7-46BF-BB04-EAA3569EB46B",
+        "UUID": "B330DAB0-D551-45B7-92EF-DBA8BE114BC2"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.dictionary",
+      "WFWorkflowActionParameters": {
+        "WFItems": {
+          "Value": {
+            "WFDictionaryFieldValueItems": [
+              {
+                "WFItemType": 0,
+                "WFKey": {
+                  "Value": {
+                    "string": "lastCommit"
+                  },
+                  "WFSerializationType": "WFTextTokenString"
+                },
+                "WFValue": {
+                  "Value": {
+                    "string": "￼",
+                    "attachmentsByRange": {
+                      "{0, 1}": {
+                        "VariableName": "LATEST COMMIT",
+                        "Type": "Variable"
+                      }
+                    }
+                  },
+                  "WFSerializationType": "WFTextTokenString"
+                }
+              }
+            ]
+          },
+          "WFSerializationType": "WFDictionaryFieldValue"
+        },
+        "UUID": "8706BC9E-B2E5-4012-9C08-A9EFCE851073"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFDictionaryValue": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "OutputUUID": "B330DAB0-D551-45B7-92EF-DBA8BE114BC2",
+                "Type": "ActionOutput",
+                "OutputName": "If Result"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "ABE196A3-DA8A-4209-991F-75CC4DC9D33B",
+        "WFDictionary": {
+          "Value": {
+            "OutputUUID": "8706BC9E-B2E5-4012-9C08-A9EFCE851073",
+            "Type": "ActionOutput",
+            "OutputName": "Dictionary"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "shortcutsToUpdate"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "ABE196A3-DA8A-4209-991F-75CC4DC9D33B",
+            "Type": "ActionOutput",
+            "OutputName": "Dictionary"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "SC PLLR INFO"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "SC PLLR INFO is now up to date with the shortcuts we need to update. Now we must check if there are any to update and etermine how to proceed."
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "shortcutsToUpdate",
+        "UUID": "CB5F74F3-82FC-4035-A64D-AB26FB74E531"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+      "WFWorkflowActionParameters": {
+        "WFTextActionText": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "OutputUUID": "CB5F74F3-82FC-4035-A64D-AB26FB74E531",
+                "Type": "ActionOutput",
+                "OutputName": "Dictionary Value"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "CE253AD7-9FD5-4188-BD43-1FD50141DF34"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "7EB91D15-6049-43E4-A518-D9BF2D91CCB1",
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "OutputUUID": "CE253AD7-9FD5-4188-BD43-1FD50141DF34",
+              "Type": "ActionOutput",
+              "OutputName": "Text"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "WFNumberValue": "0",
+        "WFCondition": 101
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "No more shortcuts to update. Ask the user what to do."
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "Type": "ExtensionInput"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "GroupingIdentifier": "8C51D8C6-3CB7-4773-A12F-3F730F8F76A4",
+        "WFCondition": 100
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "We ran ourself with nothing more to run. Exit because we are done. "
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.exit",
+      "WFWorkflowActionParameters": {}
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "8C51D8C6-3CB7-4773-A12F-3F730F8F76A4",
+        "WFControlFlowMode": 2
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
+      "WFWorkflowActionParameters": {
+        "WFMenuPrompt": "Everything up to date.",
+        "WFControlFlowMode": 0,
+        "WFMenuItems": [
+          "OK",
+          "Update Anyway"
+        ],
+        "GroupingIdentifier": "DAEA2AC6-853E-4BA5-A8B7-D89B714D9D64"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
+      "WFWorkflowActionParameters": {
+        "WFMenuItemTitle": "OK",
+        "GroupingIdentifier": "DAEA2AC6-853E-4BA5-A8B7-D89B714D9D64",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.exit",
+      "WFWorkflowActionParameters": {}
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
+      "WFWorkflowActionParameters": {
+        "WFMenuItemTitle": "Update Anyway",
+        "GroupingIdentifier": "DAEA2AC6-853E-4BA5-A8B7-D89B714D9D64",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefromlist",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "REPO SHORTCUTS",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFChooseFromListActionPrompt": "Select shortcuts to install",
+        "WFChooseFromListActionSelectMultiple": true,
+        "WFChooseFromListActionSelectAll": true
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "DAEA2AC6-853E-4BA5-A8B7-D89B714D9D64",
+        "UUID": "239488F3-F1C9-4BF4-B79A-62D36CAEDC85"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "7EB91D15-6049-43E4-A518-D9BF2D91CCB1",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable",
+            "Aggrandizements": [
+              {
+                "Type": "WFDictionaryValueVariableAggrandizement",
+                "DictionaryKey": "shortcutsToUpdate"
+              }
+            ]
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "7EB91D15-6049-43E4-A518-D9BF2D91CCB1",
+        "UUID": "06AAE858-1604-468B-A9F3-464576BC66F4"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "06AAE858-1604-468B-A9F3-464576BC66F4",
+            "Type": "ActionOutput",
+            "OutputName": "If Result"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "SHORTCUTS TO UPDATE"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.count",
+      "WFWorkflowActionParameters": {
+        "Input": {
+          "Value": {
+            "OutputUUID": "06AAE858-1604-468B-A9F3-464576BC66F4",
+            "Type": "ActionOutput",
+            "OutputName": "If Result"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "55C9F64E-8284-4628-9DA4-BF430BA9D0B7"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "94D4D52B-099F-4FD0-BCA6-88273BA75430",
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "OutputUUID": "55C9F64E-8284-4628-9DA4-BF430BA9D0B7",
+              "Type": "ActionOutput",
+              "OutputName": "Count"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "WFNumberValue": "1",
+        "WFCondition": 4
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.list",
+      "WFWorkflowActionParameters": {
+        "WFItems": [
+          ""
+        ],
+        "UUID": "3E4EDDD3-D37D-42FD-B62E-EE9EC905036A"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "94D4D52B-099F-4FD0-BCA6-88273BA75430",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "SHORTCUTS TO UPDATE",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFItemSpecifier": "Items in Range",
+        "WFItemRangeStart": "2",
+        "UUID": "1C4ED9E6-632A-4186-834B-5B53CACE5F58"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "94D4D52B-099F-4FD0-BCA6-88273BA75430",
+        "UUID": "A8B11C68-3252-4FCF-AD3D-E185AF267210"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "A8B11C68-3252-4FCF-AD3D-E185AF267210",
+            "Type": "ActionOutput",
+            "OutputName": "If Result"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "NEXT RUN SHORTCUTS"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFDictionaryValue": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "NEXT RUN SHORTCUTS",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "EF62D178-2DD9-4629-BA05-589A3B9691A8",
+        "WFDictionary": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "shortcutsToUpdate"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "EF62D178-2DD9-4629-BA05-589A3B9691A8",
+            "Type": "ActionOutput",
+            "OutputName": "Dictionary"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "SC PLLR INFO"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFDictionaryValue": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "REPO SHORTCUTS",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "E94DF800-60D0-4B4D-A6E0-E15DE8B3C6DD",
+        "WFDictionary": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "allShortcuts"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "OutputUUID": "E94DF800-60D0-4B4D-A6E0-E15DE8B3C6DD",
+            "Type": "ActionOutput",
+            "OutputName": "Dictionary"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "SC PLLR INFO"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.WriteFileIntent",
+      "WFWorkflowActionParameters": {
+        "repo": {
+          "Value": {
+            "VariableName": "THE REPO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "content": {
+          "Value": {
+            "VariableName": "SC PLLR INFO",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "mode": "overwrite",
+        "UUID": "CD25582E-F780-4F39-9FE6-922DF290B148",
+        "path": "/sc-pllr-info.json",
+        "createMissing": true,
+        "stage": false
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "SHORTCUTS TO UPDATE",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "DAD1B0D9-A46D-4D08-A539-6762F5754C09"
       }
     },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.filter.files",
       "WFWorkflowActionParameters": {
-        "WFContentItemInputParameter": {
-          "Value": {
-            "OutputUUID": "0BA32614-CEE8-47C9-B48D-3FB0C7F394DD",
-            "Type": "ActionOutput",
-            "OutputName": "My Shortcuts"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "WFContentItemLimitEnabled": true,
-        "UUID": "63B78BFB-494A-4515-AC18-20F0D5C2FE3D",
-        "WFContentItemLimitNumber": 1,
         "WFContentItemFilter": {
           "Value": {
             "WFActionParameterFilterPrefix": 1,
@@ -557,8 +1133,9 @@
                       "string": "￼",
                       "attachmentsByRange": {
                         "{0, 1}": {
-                          "VariableName": "Repeat Item",
-                          "Type": "Variable"
+                          "OutputUUID": "DAD1B0D9-A46D-4D08-A539-6762F5754C09",
+                          "Type": "ActionOutput",
+                          "OutputName": "Item from List"
                         }
                       }
                     },
@@ -571,284 +1148,15 @@
             ]
           },
           "WFSerializationType": "WFContentPredicateTableTemplate"
-        }
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.count",
-      "WFWorkflowActionParameters": {
-        "Input": {
-          "Value": {
-            "OutputUUID": "63B78BFB-494A-4515-AC18-20F0D5C2FE3D",
-            "Type": "ActionOutput",
-            "OutputName": "Files"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "8A9F4305-6B4F-4B18-88EE-4B63D377641E"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "BE3C67DA-ED1C-4F45-A4E0-71F46D8CDBF3",
-        "WFInput": {
-          "Type": "Variable",
-          "Variable": {
-            "Value": {
-              "OutputUUID": "8A9F4305-6B4F-4B18-88EE-4B63D377641E",
-              "Type": "ActionOutput",
-              "OutputName": "Count"
-            },
-            "WFSerializationType": "WFTextTokenAttachment"
-          }
-        },
-        "WFControlFlowMode": 0,
-        "WFNumberValue": "1",
-        "WFCondition": 4
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.nothing",
-      "WFWorkflowActionParameters": {
-        "UUID": "FC9DEFDB-0476-46FF-9076-8BB2BA9DAA79"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "BE3C67DA-ED1C-4F45-A4E0-71F46D8CDBF3",
-        "WFControlFlowMode": 1
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
-      "WFWorkflowActionParameters": {
-        "WFVariable": {
+        "WFContentItemInputParameter": {
           "Value": {
-            "VariableName": "Repeat Item",
+            "VariableName": "REPO SHORTCUTS",
             "Type": "Variable"
           },
           "WFSerializationType": "WFTextTokenAttachment"
-        }
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "WFControlFlowMode": 2,
-        "GroupingIdentifier": "BE3C67DA-ED1C-4F45-A4E0-71F46D8CDBF3",
-        "UUID": "80246080-D332-4451-87FE-E010F6787741"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
-      "WFWorkflowActionParameters": {
-        "WFControlFlowMode": 2,
-        "GroupingIdentifier": "3568E92B-65CC-4F0C-BB6B-5E940822D050",
-        "UUID": "0E65D592-E899-4E66-9B7D-96E455868602"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.count",
-      "WFWorkflowActionParameters": {
-        "Input": {
-          "Value": {
-            "OutputUUID": "0E65D592-E899-4E66-9B7D-96E455868602",
-            "Type": "ActionOutput",
-            "OutputName": "Repeat Results"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
         },
-        "UUID": "1DE25F7C-27C0-4739-947F-245C12487F9B"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "30B00803-33C5-4085-9FDF-D697C41075A2",
-        "WFInput": {
-          "Type": "Variable",
-          "Variable": {
-            "Value": {
-              "OutputUUID": "1DE25F7C-27C0-4739-947F-245C12487F9B",
-              "Type": "ActionOutput",
-              "OutputName": "Count"
-            },
-            "WFSerializationType": "WFTextTokenAttachment"
-          }
-        },
-        "WFControlFlowMode": 0,
-        "WFNumberValue": "0",
-        "WFCondition": 4
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.WriteFileIntent",
-      "WFWorkflowActionParameters": {
-        "path": "/sc-pullr-last-version.txt",
-        "content": {
-          "Value": {
-            "OutputUUID": "86C8F681-C590-438A-AE2F-E784697CDC09",
-            "Type": "ActionOutput",
-            "OutputName": "Latest SHA"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "43FF630A-BFCA-4A41-BB5A-499F1FB11B72",
-        "repo": {
-          "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
-            "Type": "ActionOutput",
-            "OutputName": "Repositories"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "mode": "overwrite",
-        "stage": false
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
-      "WFWorkflowActionParameters": {
-        "WFAlertActionCancelButtonShown": false,
-        "WFAlertActionMessage": "All done.",
-        "WFAlertActionTitle": "Shortcuts installed."
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.exit",
-      "WFWorkflowActionParameters": {}
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "WFControlFlowMode": 2,
-        "GroupingIdentifier": "30B00803-33C5-4085-9FDF-D697C41075A2",
-        "UUID": "DD9F0715-D3FC-4424-B869-0DB358E6DF9D"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "77207A54-F29F-45D8-9A04-4C9FDE8EFC18",
-        "WFInput": {
-          "Type": "Variable",
-          "Variable": {
-            "Value": {
-              "OutputUUID": "DD9F0715-D3FC-4424-B869-0DB358E6DF9D",
-              "Type": "ActionOutput",
-              "OutputName": "If Result"
-            },
-            "WFSerializationType": "WFTextTokenAttachment"
-          }
-        },
-        "WFControlFlowMode": 0,
-        "WFNumberValue": "1",
-        "WFCondition": 2
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.setclipboard",
-      "WFWorkflowActionParameters": {
-        "WFInput": {
-          "Value": {
-            "OutputUUID": "0053FBD8-6786-4165-873D-5604E36A2008",
-            "Type": "ActionOutput",
-            "OutputName": "Repo clone url"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "WFLocalOnly": true,
-        "UUID": "6E668113-2B26-4F6C-B470-2EA9F32138BD"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
-      "WFWorkflowActionParameters": {
-        "WFAlertActionCancelButtonShown": true,
-        "WFAlertActionMessage": "Multiple Shortcuts",
-        "WFAlertActionTitle": {
-          "Value": {
-            "string": "￼ shortcuts to install. You will be prompted to select one. When done, re-run SC Pllr ⬇️to continue.",
-            "attachmentsByRange": {
-              "{0, 1}": {
-                "OutputUUID": "1DE25F7C-27C0-4739-947F-245C12487F9B",
-                "Type": "ActionOutput",
-                "OutputName": "Count"
-              }
-            }
-          },
-          "WFSerializationType": "WFTextTokenString"
-        }
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.choosefromlist",
-      "WFWorkflowActionParameters": {
-        "WFChooseFromListActionPrompt": "Choose a shortcut to install",
-        "WFInput": {
-          "Value": {
-            "OutputUUID": "0E65D592-E899-4E66-9B7D-96E455868602",
-            "Type": "ActionOutput",
-            "OutputName": "Repeat Results"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "8DABA9B3-70C3-4F29-8156-349638ADDD16"
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "GroupingIdentifier": "77207A54-F29F-45D8-9A04-4C9FDE8EFC18",
-        "WFControlFlowMode": 1
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
-      "WFWorkflowActionParameters": {
-        "WFVariable": {
-          "Value": {
-            "OutputUUID": "0E65D592-E899-4E66-9B7D-96E455868602",
-            "Type": "ActionOutput",
-            "OutputName": "Repeat Results"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        }
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "com.appliedphasor.working-copy.WriteFileIntent",
-      "WFWorkflowActionParameters": {
-        "path": "/sc-pullr-last-version.txt",
-        "content": {
-          "Value": {
-            "OutputUUID": "86C8F681-C590-438A-AE2F-E784697CDC09",
-            "Type": "ActionOutput",
-            "OutputName": "Latest SHA"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "UUID": "96CFA846-D4F6-42CF-92FA-6142E4FD50E4",
-        "repo": {
-          "Value": {
-            "OutputUUID": "6F8244F8-0436-40FC-9449-B94575A7170D",
-            "Type": "ActionOutput",
-            "OutputName": "Repositories"
-          },
-          "WFSerializationType": "WFTextTokenAttachment"
-        },
-        "mode": "overwrite",
-        "stage": false
-      }
-    },
-    {
-      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
-      "WFWorkflowActionParameters": {
-        "WFControlFlowMode": 2,
-        "GroupingIdentifier": "77207A54-F29F-45D8-9A04-4C9FDE8EFC18",
-        "UUID": "F6535276-D69E-40A6-80DB-C9E826C6134D"
+        "UUID": "CF072E36-4ED3-4B6C-839E-12966900FC75"
       }
     },
     {
@@ -856,9 +1164,9 @@
       "WFWorkflowActionParameters": {
         "WFInput": {
           "Value": {
-            "OutputUUID": "F6535276-D69E-40A6-80DB-C9E826C6134D",
+            "OutputUUID": "CF072E36-4ED3-4B6C-839E-12966900FC75",
             "Type": "ActionOutput",
-            "OutputName": "If Result"
+            "OutputName": "Files"
           },
           "WFSerializationType": "WFTextTokenAttachment"
         },
@@ -868,6 +1176,98 @@
           "TeamIdentifier": "0000000000"
         },
         "WFOpenInAppIdentifier": "com.apple.shortcuts"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.count",
+      "WFWorkflowActionParameters": {
+        "Input": {
+          "Value": {
+            "VariableName": "NEXT RUN SHORTCUTS",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "D615BE66-2053-483B-BBBA-B6C844A797C1"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+      "WFWorkflowActionParameters": {
+        "WFTextActionText": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "NEXT RUN SHORTCUTS",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "D26CD2DF-7999-40F7-B28B-9C34B1AF4989"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "7CB15218-A088-4D79-869D-1F349B128ED1",
+        "WFInput": {
+          "Type": "Variable",
+          "Variable": {
+            "Value": {
+              "OutputUUID": "D26CD2DF-7999-40F7-B28B-9C34B1AF4989",
+              "Type": "ActionOutput",
+              "OutputName": "Text"
+            },
+            "WFSerializationType": "WFTextTokenAttachment"
+          }
+        },
+        "WFControlFlowMode": 0,
+        "WFNumberValue": "0",
+        "WFCondition": 100
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.runworkflow",
+      "WFWorkflowActionParameters": {
+        "WFInput": {
+          "Value": {
+            "VariableName": "REPO CLONE URL",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFWorkflow": {
+          "workflowIdentifier": "38F2F4D1-564F-4916-BE8B-61C536173C34",
+          "workflowName": "SC Pllr ⬇️ 2",
+          "isSelf": true
+        },
+        "UUID": "E53F2909-BB8D-49AA-B225-CAB248C1D363",
+        "WFWorkflowName": "SC Pllr ⬇️ 2"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "7CB15218-A088-4D79-869D-1F349B128ED1",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
+      "WFWorkflowActionParameters": {
+        "WFAlertActionCancelButtonShown": false,
+        "WFAlertActionMessage": "Please review and install the opened shortcuts",
+        "WFAlertActionTitle": "Almost Done!"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "7CB15218-A088-4D79-869D-1F349B128ED1",
+        "WFControlFlowMode": 2
       }
     }
   ],
@@ -895,5 +1295,5 @@
   "WFWorkflowImportQuestions": [],
   "WFWorkflowTypes": [],
   "WFQuickActionSurfaces": [],
-  "WFWorkflowHasShortcutInputVariables": false
+  "WFWorkflowHasShortcutInputVariables": true
 }
