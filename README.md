@@ -1,6 +1,6 @@
 # README
 
-By using the SC Pshr ⬆️ (Shortcut Pusher), shortcut developers can easily share, distribute, and collaborate on Apple Shortcuts and their dependencies through a single Git repository, making the process more efficient and convenient. Then, using the SC Pllr ⬇️ (Shortcut Puller) shortcut, users can install published repositories with the git url on their clipboard and a single run of the shortcut.
+By using the SC Pshr ⬆️ (Shortcut Pusher), shortcut developers can easily share, distribute, and collaborate on Apple Shortcuts and their dependencies through a single Git repository, making the process more efficient and convenient. Then, using the SC Pllr ⬇️ (Shortcut Puller) shortcut, users can install all shortcuts within a published repository with the git url on their clipboard and a single run of the shortcut.
 
 The iOS Util Shortcuts Git repository addresses the following pain points:
 
@@ -14,7 +14,7 @@ This pain is illustrated well in the [instructions for the MacStories Automation
 
 Welcome to the iOS Util Shortcuts Git repository! This project offers an innovative way to share and distribute Apple Shortcuts and their dependencies through a single Git repository, eliminating the need to manually download multiple shortcuts and making updates more convenient. The main components of this system include the **SC Pshr ⬆️ (Shortcut Pusher)** and **SC Pllr ⬇️ (Shortcut Puller)** shortcuts. 
 
-Please note that SC Psher ⬆ is only required if you are a Shortcut developer looking to publish shortcuts using this method.
+Please note that SC Psher ⬆ is only required if you are a Shortcut developer looking to publish shortcuts to your own git repository using this method.
 
 ## Getting Started
 
@@ -32,11 +32,11 @@ Please note that SC Psher ⬆ is only required if you are a Shortcut developer l
 
 ## Troubleshooting
 
-If you encounter any errors related to untrusted or privat shortcuts, please follow these steps:
+If you encounter any errors related to untrusted shortcuts or private sharing, please follow these steps:
 
 1. Open the Settings app on your iOS device.
 2. Scroll down and tap on “Shortcuts”.
-3. Enable “Allow Untrusted Shortcuts” (Private Shortcuts on iOS 16 or later)
+3. Enable “Allow Untrusted Shortcuts” (Private Sharing on iOS 16 or later)
 4. Try to install the **SC Pllr ⬇️** shortcut again.
  
 # Shoutouts
