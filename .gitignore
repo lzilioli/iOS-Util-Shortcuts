@@ -2,3 +2,5 @@ sc-pllr-info.json
 .claude/*local*
 .claude/*.lock
 .claude/worktrees
+
+.DS_Store
